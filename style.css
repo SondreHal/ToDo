@@ -1,10 +1,49 @@
 body {
 	margin: 0;
 	text-align: center;
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background: linear-gradient(-45deg, #1abbec, #40ffff, #3273ff);
 	background-size: 400% 400%;
-	animation: gradient 20s ease infinite;
+	animation: gradient 20s ease-in-out infinite;
 	font-family: "Bakbak One", cursive;
+	height: 100%;
+	width: 100%;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0%;
+	}
+	50% {
+		background-position: 100%;
+	}
+	100% {
+		background-position: 0%;
+	}
+}
+
+p {
+	margin: auto;
+	margin-bottom: 2px;
+	grid-column-start: 1;
+	width: 100%;
+	padding-block: 4px;
+	border: 1px solid rgb(141, 141, 141);
+	border-radius: 12px;
+	background: linear-gradient(-45deg, #44f08f, #5af1ff, #43f74c, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 40s ease infinite;
+}
+
+ul {
+	display: grid;
+	grid-template-columns: 1fr 49% 1fr;
+	padding: 0;
+}
+
+li {
+	display: grid;
+	grid-template-columns: 100% 1fr 1fr;
+	grid-column-start: 2;
 }
 
 #container {
@@ -14,18 +53,6 @@ body {
 	border-radius: 16px;
 	background: white;
 	min-height: 400px;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }
 
 input {
@@ -73,34 +100,34 @@ input {
 	grid-column-start: 4;
 }
 
-.removebtn {
-	border: 1px solid rgb(141, 0, 0);
-	border-radius: 12px;
-	background: linear-gradient(rgb(255, 150, 150), rgb(255, 0, 0));
-	padding-block: 6px;
-	padding-inline: 12px;
-	color: white;
-	height: 32px;
-}
-
-.removebtn:hover {
-	cursor: pointer;
-}
-
-.removebtn:active {
-	background: linear-gradient(rgb(255, 0, 0), rgb(255, 150, 150));
-}
-
 .editbtn {
-	border: 1px solid rgb(141, 141, 141);
+	/* border: 1px solid rgb(141, 141, 141);
 	border-radius: 12px;
-	background: linear-gradient(rgb(255, 255, 255), rgb(190, 190, 190));
-	padding-block: 6px;
-	padding-inline: 12px;
-	height: 32px;
+	background: linear-gradient(rgb(255, 255, 255), rgb(190, 190, 190)); */
+	/* padding-block: 6px;
+	padding-inline: 12px; */
 	grid-column-start: 2;
 	margin-left: 10px;
-	margin-right: 2px;
+	height: 33px;
+	color: rgb(0, 119, 255);
+
+	background: none;
+	border: none;
+	font-weight: bold;
+}
+
+.removebtn {
+	/* border: 1px solid rgb(141, 0, 0);
+	border-radius: 12px;
+	background: linear-gradient(rgb(255, 150, 150), rgb(255, 0, 0)); */
+	/* padding-block: 6px;
+	padding-inline: 12px; */
+	height: 33px;
+	color: rgb(170, 170, 170);
+
+	background: none;
+	border: none;
+	font-weight: bold;
 }
 
 .editbtn:hover {
@@ -111,37 +138,20 @@ input {
 	background: linear-gradient(rgb(190, 190, 190), rgb(255, 255, 255));
 }
 
+.removebtn:hover {
+	cursor: pointer;
+}
+
+.removebtn:active {
+	background: linear-gradient(rgb(255, 0, 0), rgb(255, 150, 150));
+}
+
 #inputs {
 	display: grid;
 	grid-template-columns: 1fr 16% 16% 16% 1fr;
 	grid-template-rows: 1fr 1fr;
 	grid-gap: 5px;
 	margin-bottom: 2em;
-}
-
-ul {
-	display: grid;
-	grid-template-columns: 1fr 49% 1fr;
-	padding: 0;
-}
-
-li {
-	display: grid;
-	grid-template-columns: 100% 1fr 1fr;
-	grid-column-start: 2;
-}
-
-p {
-	margin: auto;
-	margin-bottom: 2px;
-	grid-column-start: 1;
-	width: 100%;
-	padding-block: 4px;
-	border: 1px solid rgb(141, 141, 141);
-	border-radius: 12px;
-	background: linear-gradient(-45deg, #44f08f, #5af1ff, #43f74c, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 40s ease infinite;
 }
 
 .inputEdit {
@@ -154,4 +164,16 @@ p {
 	height: 32px;
 	border-radius: 12px;
 	margin-bottom: 2px;
+}
+
+@media (min-width: 700px) {
+	#container {
+		max-width: 700px;
+	}
+}
+
+@media (min-height: 700px) {
+	#container {
+		margin: 10rem auto;
+	}
 }
