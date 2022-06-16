@@ -51,6 +51,7 @@ function sortListAZ() {
 	//Sorts items Z-A when clicking new button
 	sortItemsZA.addEventListener("click", () => {
 		sortItemsZA.replaceWith(sortItemsAZ);
+		input.focus();
 
 		//Grabs li array, comparing the values and sorting Z-A
 		Array.from(ul.querySelectorAll("li"))
