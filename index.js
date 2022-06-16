@@ -100,15 +100,12 @@ function addStuff() {
 		li.remove();
 	});
 
-	//Edit button removes p and both buttons,
-	//adds input with previous list item value as textContent, adds two new buttons
+	//Edit button changes p to input and "Edit" button to "Confirm" button,
 	editButton.addEventListener("click", () => {
-		p.remove();
-		editButton.remove();
-		yeetButton.remove();
+		p.replaceWith(editText);
+		editButton.replaceWith(confirmButton);
 
-		li.append(editText, confirmButton, yeetButton);
-
+		//adds input with previous list item value as textContent
 		editText.value = p.textContent;
 		editText.focus();
 
