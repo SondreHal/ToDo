@@ -1,43 +1,69 @@
 const input = document.querySelector("#input");
-const additem = document.querySelector("#additem");
-const sortitems = document.querySelector("#sortitems");
-const clearitems = document.querySelector("#clearitems");
+const addItem = document.querySelector(".additem");
+const sortItemsAZ = document.querySelector(".sortitems");
+const clearItems = document.querySelector(".clearitems");
+
+input.focus();
 
 //If user hits Enter key, add input text as list item
 document.addEventListener("keyup", (e) => {
 	if (e.code !== "Enter") return;
 	addStuff();
+	input.focus();
 });
 
 //If user clicks "Add Items", add input text as list item
-additem.addEventListener("click", () => {
+addItem.addEventListener("click", () => {
 	addStuff();
 	input.focus();
 });
 
 //If user clicks "Sort Items", sort list items
-sortitems.addEventListener("click", () => {
-	sortList("lists");
+sortItemsAZ.addEventListener("click", () => {
+	sortListAZ();
+	input.focus();
 });
 
 //If user clicks "Clear Items", clear list items
-clearitems.addEventListener("click", () => {
+clearItems.addEventListener("click", () => {
 	document.querySelectorAll("li").forEach((li) => li.remove());
+	input.focus();
+	document.querySelector(".sortitems").replaceWith(sortItemsAZ);
 });
 
-//Function for sorting list items
-function sortList(ul) {
-	ul = document.querySelector("ul");
+//Function for sorting items A-Z
+function sortListAZ() {
+	const sortItemsZA = document.createElement("button");
+	const ul = document.querySelector("ul");
 
-	Array.from(ul.getElementsByTagName("LI"))
+	//Grabs li array, comparing the values and sorting A-Z
+	Array.from(ul.querySelectorAll("li"))
 		.sort((a, b) => a.textContent.localeCompare(b.textContent))
-		.forEach((li) => ul.appendChild(li));
+		.forEach((li) => ul.append(li));
+
+	//Replaces sort button(A-Z) with sort button(Z-A)
+	sortItemsAZ.replaceWith(sortItemsZA);
+
+	//Gives new button a name and a class
+	sortItemsZA.textContent = "SORT ITEMS Z-A";
+	sortItemsZA.classList.add("sortitems");
+
+	//Sorts items Z-A when clicking new button
+	sortItemsZA.addEventListener("click", () => {
+		sortItemsZA.replaceWith(sortItemsAZ);
+
+		//Grabs li array, comparing the values and sorting Z-A
+		Array.from(ul.querySelectorAll("li"))
+			.sort((a, b) => b.textContent.localeCompare(a.textContent))
+			.forEach((li) => ul.append(li));
+	});
 }
 
 //Function for adding input text as list items
 function addStuff() {
 	//If there is whitespace, user cannot make list item
 	if (input.value.match(/^ *$/)) return;
+	document.querySelector(".sortitems").replaceWith(sortItemsAZ);
 
 	const li = document.createElement("li");
 	const p = document.createElement("p");
@@ -53,13 +79,16 @@ function addStuff() {
 	//Makes it so p is value of input text
 	p.textContent = input.value;
 
-	//Names the buttons being made and gives them a class
-	yeetButton.textContent = "Yeet";
+	//Gives new buttons a name and a class
+	yeetButton.textContent = "REMOVE";
 	yeetButton.classList.add("removebtn");
-	editButton.textContent = "Edit";
+
+	editButton.textContent = "EDIT";
 	editButton.classList.add("editbtn");
-	confirmButton.textContent = "Confirm";
+
+	confirmButton.textContent = "CONFIRM";
 	confirmButton.classList.add("editbtn");
+
 	editText.classList.add("inputEdit");
 
 	//Resets input field when making a list item

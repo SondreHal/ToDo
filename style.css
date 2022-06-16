@@ -1,15 +1,15 @@
 body {
 	margin: 0;
 	text-align: center;
-	background: linear-gradient(-45deg, #1abbec, #40ffff, #3273ff);
+	background: linear-gradient(-45deg, #1abbec, #40c9ff, #3273ff);
 	background-size: 400% 400%;
-	animation: gradient 20s ease-in-out infinite;
 	font-family: "Bakbak One", cursive;
 	height: 100%;
 	width: 100%;
+	/* animation: gradient 20s ease-in-out infinite; */
 }
 
-@keyframes gradient {
+/* @keyframes gradient {
 	0% {
 		background-position: 0%;
 	}
@@ -19,7 +19,7 @@ body {
 	100% {
 		background-position: 0%;
 	}
-}
+} */
 
 p {
 	margin: auto;
@@ -64,38 +64,48 @@ input {
 	grid-column-end: 5;
 }
 
-#additem,
-#sortitems,
-#clearitems {
-	border: 1px solid rgb(141, 141, 141);
-	border-radius: 12px;
-	background: linear-gradient(rgb(255, 255, 255), rgb(240, 240, 240));
-	padding: 10px;
-}
-
-#additem:hover,
-#sortitems:hover,
-#clearitems:hover {
+button {
 	cursor: pointer;
 }
 
-#additem:active,
-#sortitems:active,
-#clearitems:active {
+.additem {
+	border: none;
+	border-radius: 6px;
+	background-color: #2d88ea;
+	color: white;
+	font-weight: bold;
+	font-size: 10px;
+}
+
+.sortitems,
+.clearitems {
+	border: 2px solid rgb(201, 201, 201);
+	color: rgb(129, 129, 129);
+	border-radius: 6px;
+	/* background: linear-gradient(rgb(255, 255, 255), rgb(240, 240, 240)); */
+	/* background-color: rgb(200, 200, 200); */
+	background: none;
+	font-weight: bold;
+	font-size: 10px;
+}
+
+.additem:active,
+.sortitems:active,
+.clearitems:active {
 	background: linear-gradient(rgb(240, 240, 240), rgb(255, 255, 255));
 }
 
-#clearitems {
+.clearitems {
 	grid-row-start: 2;
 	grid-column-start: 2;
 }
 
-#additem {
+.additem {
 	grid-row-start: 2;
 	grid-column-start: 3;
 }
 
-#sortitems {
+.sortitems {
 	grid-row-start: 2;
 	grid-column-start: 4;
 }
@@ -108,12 +118,15 @@ input {
 	padding-inline: 12px; */
 	grid-column-start: 2;
 	margin-left: 10px;
+	margin-right: 5px;
 	height: 33px;
 	color: rgb(0, 119, 255);
 
 	background: none;
 	border: none;
 	font-weight: bold;
+	font-size: 12px;
+	padding: 0;
 }
 
 .removebtn {
@@ -128,18 +141,12 @@ input {
 	background: none;
 	border: none;
 	font-weight: bold;
-}
-
-.editbtn:hover {
-	cursor: pointer;
+	font-size: 12px;
+	padding: 0;
 }
 
 .editbtn:active {
 	background: linear-gradient(rgb(190, 190, 190), rgb(255, 255, 255));
-}
-
-.removebtn:hover {
-	cursor: pointer;
 }
 
 .removebtn:active {
@@ -149,7 +156,7 @@ input {
 #inputs {
 	display: grid;
 	grid-template-columns: 1fr 16% 16% 16% 1fr;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: 1fr 28px;
 	grid-gap: 5px;
 	margin-bottom: 2em;
 }
