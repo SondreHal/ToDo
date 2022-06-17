@@ -72,15 +72,24 @@ function addStuff() {
 	const editButton = document.createElement("button");
 	const confirmButton = document.createElement("button");
 	const editText = document.createElement("input");
+	const doneButton = document.createElement("button");
 
 	//Makes a p, and two buttons(edit and delete) in the ul element
 	document.querySelector("ul").append(li);
-	li.append(p, editButton, yeetButton);
+	li.append(
+		//doneButton,
+		p,
+		editButton,
+		yeetButton
+	);
 
 	//Makes it so p is value of input text
 	p.textContent = input.value;
 
 	//Gives new buttons a name and a class
+	// doneButton.textContent = "DONE";
+	// doneButton.classList.add("donebtn");
+
 	yeetButton.textContent = "REMOVE";
 	yeetButton.classList.add("removebtn");
 
@@ -131,4 +140,8 @@ function addStuff() {
 			p.textContent = editText.value;
 		}
 	});
+	const allToDos = document.getElementsByTagName(p);
+
+	// localStorage.setItem("todos"), JSON.stringify(allToDos);
+	console.log(p);
 }
