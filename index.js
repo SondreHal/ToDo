@@ -96,7 +96,7 @@ function addStuff() {
 	editButton.textContent = "EDIT";
 	editButton.classList.add("editbtn");
 
-	confirmButton.textContent = "CONFIRM";
+	confirmButton.textContent = "APPLY";
 	confirmButton.classList.add("editbtn");
 
 	editText.classList.add("inputEdit");
