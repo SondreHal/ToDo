@@ -1,235 +1,254 @@
 body {
+	/*Box model stuff*/
+	width: 100%;
+	height: 100%;
 	margin: 0;
-	text-align: center;
 	background: linear-gradient(-45deg, #ffffff, #314755);
 	background-size: 400% 400%;
+	/*Typography stuff*/
 	font-family: "Bakbak One", cursive;
-	height: 100%;
-	width: 100%;
-	/* animation: gradient 20s ease-in-out infinite; */
+	text-align: center;
 }
 
 h1 {
+	/*Typography stuff*/
 	font-size: 40px;
 }
 
 p {
+	/*Display stuff*/
+	grid-column-start: 1;
+	/*Box model stuff*/
+	width: 100%;
 	margin: auto;
 	margin-bottom: 2px;
-	grid-column-start: 1;
-	width: 100%;
-	padding-block: 4px;
 	border: none;
 	border-radius: 8px;
 	background: linear-gradient(-45deg, #91b9d0, #6c90a5);
+	/*Typography stuff*/
 	font-weight: lighter;
+	/*Miscellaneous*/
+	padding-block: 4px;
 }
 
 ul {
+	/*Display stuff*/
 	display: grid;
 	grid-template-columns: 1fr 49% 1fr;
+	/*Box model stuff*/
 	padding: 0;
 }
 
 li {
+	/*Display stuff*/
 	display: grid;
 	grid-template-columns: 100% 1fr 1fr;
 	grid-column-start: 2;
 }
 
 #container {
-	margin: 4rem auto;
+	/*Box model stuff*/
 	width: 70%;
+	min-height: 400px;
+	margin: 4rem auto;
+	padding-bottom: 2em;
 	border: 2px solid rgb(190, 190, 190);
 	border-radius: 16px;
 	background-color: white;
-	min-height: 400px;
-	padding-bottom: 2em;
 }
 
 input {
-	/* border: 1px solid rgb(141, 141, 141);
-	border-radius: 8px; */
-	border: none;
-	border-bottom: 2px solid rgb(160, 160, 160);
-	/* background: linear-gradient(rgb(255, 255, 255), rgb(240, 240, 240)); */
-	padding: 2px;
+	/*Display stuff*/
 	grid-column-start: 2;
 	grid-column-end: 5;
-	text-align: center;
+	/*Box model stuff*/
+	padding: 2px;
+	border: none;
+	border-bottom: 2px solid rgb(160, 160, 160);
+	/*Typography stuff*/
 	font-size: 16px;
+	text-align: center;
 }
 
 input::placeholder {
+	/*Typography stuff*/
 	font-size: 12px;
 }
 
 input:focus {
-	outline: none;
+	/*Box model stuff*/
 	border-bottom: 2px solid rgb(128, 128, 128);
+	outline: none;
 }
 
 button {
+	/*Miscellaneous*/
 	cursor: pointer;
 }
 
 .additem {
+	/*Box model stuff*/
 	border: none;
 	border-radius: 6px;
 	background-color: #2d88ea;
-	color: white;
-	font-weight: bold;
+	/*Typography stuff*/
 	font-size: 10px;
+	font-weight: bold;
+	color: white;
 }
 
 .additem:hover {
+	/*Box model stuff*/
 	background-color: #449efe;
 }
 
 .additem:active {
+	/*Box model stuff*/
 	background-color: #2d88ea;
 }
 
 .sortitems,
 .clearitems {
+	/*Box model stuff*/
 	border: 2px solid rgb(201, 201, 201);
-	color: rgb(129, 129, 129);
 	border-radius: 6px;
 	background: none;
-	font-weight: bold;
+	/*Typography stuff*/
 	font-size: 10px;
+	font-weight: bold;
+	color: rgb(129, 129, 129);
 }
 
 .sortitems:hover,
 .clearitems:hover {
+	/*Box model stuff*/
 	border: 2px solid rgb(140, 140, 140);
-	color: rgb(100, 100, 100);
 	border-radius: 6px;
 	background: none;
-	font-weight: bold;
+	/*Typography stuff*/
 	font-size: 10px;
+	font-weight: bold;
+	color: rgb(100, 100, 100);
 }
 
 .sortitems:active,
 .clearitems:active {
+	/*Box model stuff*/
 	border: 2px solid rgb(201, 201, 201);
+	/*Typography stuff*/
 	color: rgb(129, 129, 129);
 }
 
 .clearitems {
-	grid-row-start: 2;
+	/*Display stuff*/
 	grid-column-start: 2;
+	grid-row-start: 2;
 }
 
 .additem {
-	grid-row-start: 2;
+	/*Display stuff*/
 	grid-column-start: 3;
+	grid-row-start: 2;
 }
 
 .sortitems {
-	grid-row-start: 2;
+	/*Display stuff*/
 	grid-column-start: 4;
+	grid-row-start: 2;
 }
 
-/* .donebtn {
-	grid-column-start: 0;
-	margin-left: 10px;
-	margin-right: 5px;
-	height: 33px;
-	color: #0077ff;
-
-	background: none;
-	border: none;
-	font-weight: bold;
-	font-size: 12px;
-	padding: 0;
-} */
-
 .editbtn {
-	/* border: 1px solid rgb(141, 141, 141);
-	border-radius: 12px;
-	background: linear-gradient(rgb(255, 255, 255), rgb(190, 190, 190)); */
-	/* padding-block: 6px;
-	padding-inline: 12px; */
+	/*Display stuff*/
 	grid-column-start: 2;
+	/*Box model stuff*/
+	height: 33px;
 	margin-left: 10px;
 	margin-right: 5px;
-	height: 33px;
-	color: #0077ff;
-
-	background: none;
-	border: none;
-	font-weight: bold;
-	font-size: 12px;
 	padding: 0;
+	border: none;
+	background: none;
+	/*Typography stuff*/
+	font-size: 12px;
+	font-weight: bold;
+	color: #0077ff;
 }
 
 .removebtn {
-	/* border: 1px solid rgb(141, 0, 0);
-	border-radius: 12px;
-	background: linear-gradient(rgb(255, 150, 150), rgb(255, 0, 0)); */
-	/* padding-block: 6px;
-	padding-inline: 12px; */
+	/*Box model stuff*/
 	height: 33px;
-	color: rgb(170, 170, 170);
-
-	background: none;
-	border: none;
-	font-weight: bold;
-	font-size: 12px;
 	padding: 0;
+	border: none;
+	background: none;
+	/*Typography stuff*/
+	font-size: 12px;
+	font-weight: bold;
+	color: rgb(170, 170, 170);
 }
 
 .editbtn:active {
+	/*Box model stuff*/
 	background: linear-gradient(rgb(190, 190, 190), rgb(255, 255, 255));
 }
 
 .removebtn:active {
+	/*Box model stuff*/
 	background: linear-gradient(rgb(255, 0, 0), rgb(255, 150, 150));
 }
 
 #inputs {
+	/*Display stuff*/
 	display: grid;
 	grid-template-columns: 1fr 16% 16% 16% 1fr;
 	grid-template-rows: 1fr 28px;
-	grid-gap: 5px;
+	/*Box model stuff*/
 	margin-bottom: 2em;
+	/*Miscellaneous*/
+	grid-gap: 5px;
 }
 
 .inputEdit {
-	font-family: "Bakbak One", cursive;
-	margin: auto;
-	background: linear-gradient(-45deg, #acdbf7, #89b7d1);
-	border-radius: 8px;
-	border: none;
-	box-sizing: border-box;
+	/*Display stuff*/
 	grid-column-start: 1;
 	grid-column-end: 2;
+	/*Box model stuff*/
 	width: 100%;
 	height: 30px;
+	margin: auto;
 	margin-bottom: 2px;
+	border: none;
+	border-radius: 8px;
+	background: linear-gradient(-45deg, #acdbf7, #89b7d1);
+	/*Typography stuff*/
+	font-family: "Bakbak One", cursive;
+	/*Miscellaneous*/
+	box-sizing: border-box;
 }
 
 .inputEdit:focus {
-	font-family: "Bakbak One", cursive;
-	margin: auto;
-	margin-bottom: 2px;
-	background: linear-gradient(-45deg, #acdbf7, #89b7d1);
-	border: none;
-	border-radius: 8px;
+	/*Box model stuff*/
 	width: 100%;
 	height: 30px;
+	margin: auto;
+	margin-bottom: 2px;
+	border: none;
+	border-radius: 8px;
+	background: linear-gradient(-45deg, #acdbf7, #89b7d1);
+	/*Typography stuff*/
+	font-family: "Bakbak One", cursive;
+	/*Miscellaneous*/
 	padding-block: 4px;
 }
 
 @media (min-width: 700px) {
 	#container {
+		/*Box model stuff*/
 		max-width: 700px;
 	}
 }
 
 @media (min-height: 700px) {
 	#container {
+		/*Box model stuff*/
 		margin: 10rem auto;
 	}
 }
