@@ -249,6 +249,6 @@ button {
 @media (min-height: 700px) {
 	#container {
 		/*Box model stuff*/
-		margin: 10rem auto;
+		margin: 50px auto;
 	}
 }
